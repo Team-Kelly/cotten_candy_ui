@@ -1,60 +1,84 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:cotten_candy_ui/cotten_candy_ui.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HomePage(title: 'Cotten Candy UI Example'),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
 
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion =
-          await CottenCandyUi.platformVersion ?? 'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        title: Text(
+          widget.title,
+          style: const TextStyle(color: Colors.black),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        backgroundColor: Colors.white,
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              DefaultTextField(
+                hintText: '출발',
+                width: MediaQuery.of(context).size.width * 32 / 39,
+                height: MediaQuery.of(context).size.width * 8 / 39,
+              ),
+              const SizedBox(height: 10),
+              DefaultRadioButton(
+                  radioComponents: const ['최단경로', '지하철', '버스'],
+                  width: 100,
+                  height: 35,
+                  onChanged: (value) {}),
+              const SizedBox(height: 20),
+              DefaultButton(
+                  text: '나의 시작길 입력하기',
+                  width: MediaQuery.of(context).size.width * (61 / 78),
+                  height: 83,
+                  onPressed: () {}),
+              const SizedBox(height: 20),
+              DefaultButton2(
+                  text: '나의 시작길 입력하기',
+                  width: MediaQuery.of(context).size.width * (61 / 78),
+                  height: 83,
+                  onPressed: () {}),
+              const SizedBox(height: 20),
+              DefaultButton3(
+                  text: '나의 시작길 입력하기',
+                  width: MediaQuery.of(context).size.width * (61 / 78),
+                  height: 83,
+                  onPressed: () {}),
+              const SizedBox(height: 100),
+            ],
+          ),
         ),
       ),
     );

@@ -1,13 +1,7 @@
+library cotten_candy_ui;
 
-import 'dart:async';
+export 'package:flutter/widgets.dart';
 
-import 'package:flutter/services.dart';
-
-class CottenCandyUi {
-  static const MethodChannel _channel = MethodChannel('cotten_candy_ui');
-
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-}
+export 'src/button.dart';
+export 'src/radio_button.dart';
+export 'src/text_field.dart';
