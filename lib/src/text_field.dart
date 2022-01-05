@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 
 class DefaultTextField extends StatelessWidget {
-  final String? hintText;
+  final String? labelText;
   final double width;
   final double height;
+  final Color labelColor;
+  final Color filledColor;
+  final Color focusedsideColor;
+  final Color enabledsideColor;
+  final double borderRadius;
+
   const DefaultTextField(
-      {Key? key, required this.width, required this.height, this.hintText})
+      {Key? key,
+      this.labelText,
+      this.width = 320,
+      this.height = 83,
+      this.labelColor = const Color(0xFFFC5D5D),
+      this.filledColor = const Color(0xFFFFFFFF),
+      this.focusedsideColor = const Color(0xFFFFFFFF),
+      this.enabledsideColor = const Color(0xFFFFFFFF),
+      this.borderRadius = 15})
       : super(key: key);
 
   @override
@@ -16,16 +30,16 @@ class DefaultTextField extends StatelessWidget {
         child: TextField(
             decoration: InputDecoration(
           filled: true,
-          fillColor: Colors.white,
-          labelText: (hintText != null) ? (' ' + hintText!) : ' ',
-          labelStyle: const TextStyle(color: Color(0xFFFC5D5D)),
-          focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15.0)),
-            borderSide: BorderSide(width: 1, color: Colors.white),
+          fillColor: filledColor,
+          labelText: (labelText != null) ? (' ' + labelText!) : null,
+          labelStyle: TextStyle(color: labelColor),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+            borderSide: BorderSide(width: 1, color: focusedsideColor),
           ),
-          enabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15.0)),
-            borderSide: BorderSide(width: 1, color: Colors.white),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+            borderSide: BorderSide(width: 1, color: enabledsideColor),
           ),
         )));
   }

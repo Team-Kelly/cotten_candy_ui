@@ -1,73 +1,75 @@
 import 'package:flutter/material.dart';
 
 class DefaultRadioButton extends StatefulWidget {
+  final Function(String?)? onChanged;
   final List<String> radioComponents;
   final double width;
   final double height;
-  final Function(String?)? onChanged;
-  const DefaultRadioButton({
-    Key? key,
-    required this.radioComponents,
-    required this.width,
-    required this.height,
-    required this.onChanged,
-  }) : super(key: key);
+  final double interval;
+  final Color textColor;
+  final Color pressedTextColor;
+  final Color buttonColor;
+  final Color pressedButtonColor;
+  final double borderRadius;
+  final double elevation;
+
+  const DefaultRadioButton(
+      {Key? key,
+      required this.onChanged,
+      required this.radioComponents,
+      this.width = 100,
+      this.height = 35,
+      this.interval = 20,
+      this.textColor = const Color(0xFFD8D8D8),
+      this.pressedTextColor = Colors.black,
+      this.buttonColor = const Color(0xFFFFFFFF),
+      this.pressedButtonColor = const Color(0xFFFECFC3),
+      this.borderRadius = 42,
+      this.elevation = 0})
+      : super(key: key);
 
   @override
-  _DefaultRadioButtonState createState() => _DefaultRadioButtonState(
-      radioComponents: radioComponents,
-      width: width,
-      height: height,
-      onChanged: onChanged);
+  _DefaultRadioButtonState createState() => _DefaultRadioButtonState();
 }
 
 class _DefaultRadioButtonState extends State<DefaultRadioButton> {
-  List<String> radioComponents = [];
-  double width;
-  double height;
   String? currentValue;
-  Function(String?)? onChanged;
-  _DefaultRadioButtonState(
-      {required this.radioComponents,
-      required this.width,
-      required this.height,
-      required this.onChanged});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Builder(builder: (context) {
         List<Widget> components = [];
-        currentValue ??= radioComponents[0];
-        for (int i = 0; i < radioComponents.length; i++) {
+        currentValue ??= widget.radioComponents[0];
+        for (int i = 0; i < widget.radioComponents.length; i++) {
           components.add(SizedBox(
-            width: 120,
+            width: (widget.width) + (widget.interval),
             child: Center(
                 child: RawMaterialButton(
-              child: Text(radioComponents[i],
+              child: Text(widget.radioComponents[i],
                   style: TextStyle(
-                      color: (radioComponents[i] == currentValue)
-                          ? Colors.black
-                          : const Color(0xFFD8D8D8),
+                      color: (widget.radioComponents[i] == currentValue)
+                          ? widget.pressedTextColor
+                          : widget.textColor,
                       fontWeight: FontWeight.w800)),
               onPressed: () {
                 setState(() {
-                  currentValue = radioComponents[i];
+                  currentValue = widget.radioComponents[i];
                 });
-                onChanged!(currentValue);
+                widget.onChanged!(currentValue);
               },
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(42.0)),
-              elevation: 0.0,
-              fillColor: (radioComponents[i] == currentValue)
-                  ? const Color(0xFFFECFC3)
-                  : const Color(0xFFFFFFFF),
+                  borderRadius: BorderRadius.circular(widget.borderRadius)),
+              elevation: widget.elevation,
+              fillColor: (widget.radioComponents[i] == currentValue)
+                  ? widget.pressedButtonColor
+                  : widget.buttonColor,
               constraints: BoxConstraints.tightFor(
-                width: width,
-                height: height,
+                width: widget.width,
+                height: widget.height,
               ),
             )),
           ));
-          //사이 간격 입력받는거 추가하기, onChanged랑 currentValue return 추가하기
         }
         return Row(
             mainAxisAlignment: MainAxisAlignment.center, children: components);

@@ -47,34 +47,25 @@ class _MyHomePageState extends State<HomePage> {
           child: Column(
             children: [
               const SizedBox(height: 10),
-              DefaultTextField(
-                hintText: '출발',
-                width: MediaQuery.of(context).size.width * 32 / 39,
-                height: MediaQuery.of(context).size.width * 8 / 39,
+              const DefaultTextField(
+                labelText: '출발',
               ),
               const SizedBox(height: 10),
               DefaultRadioButton(
                   radioComponents: const ['최단경로', '지하철', '버스'],
-                  width: 100,
-                  height: 35,
                   onChanged: (value) {}),
               const SizedBox(height: 20),
+              const TimePicker(),
+              const SizedBox(height: 20),
+              DayOfTheWeek(
+                onChanged: (value) {},
+              ),
+              const SizedBox(height: 20),
               DefaultButton(
-                  text: '나의 시작길 입력하기',
-                  width: MediaQuery.of(context).size.width * (61 / 78),
-                  height: 83,
-                  onPressed: () {}),
-              const SizedBox(height: 20),
-              DefaultButton2(
-                  text: '나의 시작길 입력하기',
-                  width: MediaQuery.of(context).size.width * (61 / 78),
-                  height: 83,
-                  onPressed: () {}),
-              const SizedBox(height: 20),
-              DefaultButton3(
-                  text: '나의 시작길 입력하기',
-                  width: MediaQuery.of(context).size.width * (61 / 78),
-                  height: 83,
+                  child: const Text('나의 시작길 입력하기',
+                      style: TextStyle(
+                          color: Color(0xFFFC5D5D),
+                          fontWeight: FontWeight.w800)),
                   onPressed: () {}),
               const SizedBox(height: 100),
             ],
