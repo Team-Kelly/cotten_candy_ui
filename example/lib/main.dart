@@ -55,11 +55,14 @@ class _MyHomePageState extends State<HomePage> {
                   radioComponents: const ['최단경로', '지하철', '버스'],
                   onChanged: (value) {}),
               const SizedBox(height: 20),
-              const TimePicker(),
+              TimePicker(onChanged: (hour, minute) {
+              },),
               const SizedBox(height: 20),
               DayOfTheWeek(
                 onChanged: (value) {},
               ),
+              const SizedBox(height: 20),
+              TimeLine(),
               const SizedBox(height: 20),
               DefaultButton(
                   child: const Text('나의 시작길 입력하기',
