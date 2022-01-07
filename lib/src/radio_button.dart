@@ -37,7 +37,7 @@ class _DefaultRadioButtonState extends State<DefaultRadioButton> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return SizedBox(height: widget.height,width:widget.width*widget.radioComponents.length+widget.interval*(widget.radioComponents.length),
       child: Builder(builder: (context) {
         List<Widget> components = [];
         currentValue ??= widget.radioComponents[0];

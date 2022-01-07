@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:cotten_candy_ui/cotten_candy_ui.dart';
 
 void main() {
@@ -50,27 +49,53 @@ class _MyHomePageState extends State<HomePage> {
               const DefaultTextField(
                 labelText: '출발',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               DefaultRadioButton(
                   radioComponents: const ['최단경로', '지하철', '버스'],
                   onChanged: (value) {}),
-              const SizedBox(height: 20),
-              TimePicker(onChanged: (hour, minute) {
-              },),
-              const SizedBox(height: 20),
+              const SizedBox(height: 5),
+              TimePicker(
+                height: 63,
+                onChanged: (hour, minute) {},
+              ),
               DayOfTheWeek(
                 onChanged: (value) {},
               ),
-              const SizedBox(height: 20),
-              TimeLine(),
-              const SizedBox(height: 20),
+              const SizedBox(height: 5),
+              const TimeLine(children: [
+                Indicator(
+                  child: Text('출발', style: TextStyle(color: Color(0xFFFFFFFF))),
+                  title: Text('집'),
+                ),
+                Indicator(
+                  child: Icon(
+                    Icons.directions_run,
+                    color: Colors.white,
+                  ),
+                  title: Text('도보 20분'),
+                  subTitle: Text('12km'),
+                ),
+                Indicator(
+                  child: Icon(
+                    Icons.directions_bus,
+                    color: Colors.white,
+                  ),
+                  title: Text('마석역'),
+                  subTitle: Text('경춘선'),
+                ),
+                Indicator(
+                  child: Text('도착', style: TextStyle(color: Color(0xFFFFFFFF))),
+                  title: Text('광운대역'),
+                  subTitle: Text('1호선'),
+                ),
+              ], connector: Connector()),
               DefaultButton(
                   child: const Text('나의 시작길 입력하기',
                       style: TextStyle(
                           color: Color(0xFFFC5D5D),
                           fontWeight: FontWeight.w800)),
                   onPressed: () {}),
-              const SizedBox(height: 100),
+              const SizedBox(height: 10),
             ],
           ),
         ),

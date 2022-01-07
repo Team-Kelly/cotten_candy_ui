@@ -14,7 +14,7 @@ class DefaultButton extends StatelessWidget {
       required this.onPressed,
       required this.child,
       this.width = 305,
-      this.height = 83,
+      this.height = 80,
       this.buttonColor = const Color(0xFFFFFFFF),
       this.borderRadius = 42,
       this.elevation = 0})

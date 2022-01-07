@@ -14,7 +14,7 @@ class DefaultTextField extends StatelessWidget {
       {Key? key,
       this.labelText,
       this.width = 320,
-      this.height = 83,
+      this.height = 60,
       this.labelColor = const Color(0xFFFC5D5D),
       this.filledColor = const Color(0xFFFFFFFF),
       this.focusedsideColor = const Color(0xFFFFFFFF),

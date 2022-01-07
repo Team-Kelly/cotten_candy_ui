@@ -9,7 +9,7 @@ class TimePicker extends StatefulWidget {
   const TimePicker(
       {Key? key,
       required this.onChanged,
-      this.width = 60,
+      this.width = 250,
       this.height = 100,
       this.textSize = 20})
       : super(key: key);
@@ -32,25 +32,25 @@ class _TimePickerState extends State<TimePicker> {
       children: [
         SizedBox(
             height: widget.height,
-            width: 60,
+            width: widget.textSize * 2.5,
             child: CupertinoPicker(
                 selectionOverlay: SizedBox(
-                  width: widget.textSize * 3.2,
-                  height: 30,
-                  child: Column(
+                  width: widget.textSize * 2.5,
+                  height: widget.height * 0.3,
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 25,
-                        width: widget.textSize * 3.2,
+                      SizedBox(
+                        height: widget.height * 0.25,
+                        width: widget.textSize * 2.5,
                       ),
                       Container(
-                        height: 2,
-                        width: widget.textSize * 3.2,
+                        height: widget.height * 0.02,
+                        width: widget.textSize * 2.5,
                         color: const Color(0xFFFC5D5D),
                       ),
-                      Container(
-                        height: 3,
-                        width: widget.textSize * 3.2,
+                      SizedBox(
+                        height: widget.height * 0.03,
+                        width: widget.textSize * 2.5,
                       ),
                     ],
                   ),
@@ -74,9 +74,10 @@ class _TimePickerState extends State<TimePicker> {
                     style: TextStyle(fontSize: widget.textSize),
                   )
                 ])),
+                SizedBox(width: ((widget.width-widget.textSize*12)<0)?0:widget.width-widget.textSize*12,),
         SizedBox(
           height: widget.height,
-          width: 60,
+          width: widget.textSize * 3,
           child: Builder(builder: (context) {
             List<Widget> hours = [];
             hours.add(Text(
@@ -92,22 +93,22 @@ class _TimePickerState extends State<TimePicker> {
             }
             return CupertinoPicker(
                 selectionOverlay: SizedBox(
-                  width: 35,
-                  height: 30,
-                  child: Column(
+                  width: widget.textSize * 2,
+                  height: widget.height,
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 25,
-                        width: widget.textSize * 1.6,
+                      SizedBox(
+                        height: widget.height * 0.25,
+                        width: widget.textSize * 2,
                       ),
                       Container(
-                        height: 2,
-                        width: widget.textSize * 1.6,
+                        height: widget.height * 0.02,
+                        width: widget.textSize * 2,
                         color: const Color(0xFFFC5D5D),
                       ),
-                      Container(
-                        height: 3,
-                        width: widget.textSize * 1.6,
+                      SizedBox(
+                        height: widget.height * 0.03,
+                        width: widget.textSize * 2,
                       ),
                     ],
                   ),
@@ -130,13 +131,22 @@ class _TimePickerState extends State<TimePicker> {
                 children: hours);
           }),
         ),
-        Text(
-          '시',
-          style: TextStyle(fontSize: widget.textSize),
+        SizedBox(
+          height: widget.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '시',
+                style: TextStyle(fontSize: widget.textSize),
+              ),
+              SizedBox(height: widget.height * 0.1)
+            ],
+          ),
         ),
         SizedBox(
           height: widget.height,
-          width: 60,
+          width: widget.textSize * 2.5,
           child: Builder(builder: (context) {
             List<Widget> minutes = [];
             for (int minute = 0; minute < 60; minute++) {
@@ -147,22 +157,22 @@ class _TimePickerState extends State<TimePicker> {
             }
             return CupertinoPicker(
                 selectionOverlay: SizedBox(
-                  width: 35,
-                  height: 30,
-                  child: Column(
+                  width: widget.textSize * 2,
+                  height: widget.height,
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 25,
-                        width: widget.textSize * 1.6,
+                      SizedBox(
+                        height: widget.height * 0.25,
+                        width: widget.textSize * 2,
                       ),
                       Container(
-                        height: 2,
-                        width: widget.textSize * 1.6,
+                        height: widget.height * 0.02,
+                        width: widget.textSize * 2,
                         color: const Color(0xFFFC5D5D),
                       ),
-                      Container(
-                        height: 3,
-                        width: widget.textSize * 1.6,
+                      SizedBox(
+                        height: widget.height * 0.03,
+                        width: widget.textSize * 2,
                       ),
                     ],
                   ),
@@ -181,9 +191,18 @@ class _TimePickerState extends State<TimePicker> {
                 children: minutes);
           }),
         ),
-        Text(
-          '분',
-          style: TextStyle(fontSize: widget.textSize),
+        SizedBox(
+          height: widget.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '분',
+                style: TextStyle(fontSize: widget.textSize),
+              ),
+              SizedBox(height: widget.height * 0.1)
+            ],
+          ),
         )
       ],
     );
