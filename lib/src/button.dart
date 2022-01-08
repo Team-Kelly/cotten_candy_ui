@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DefaultButton extends StatelessWidget {
+class CandyButton extends StatelessWidget {
   final Function()? onPressed;
   final Widget child;
   final double width;
@@ -9,7 +9,7 @@ class DefaultButton extends StatelessWidget {
   final double borderRadius;
   final double elevation;
 
-  const DefaultButton(
+  const CandyButton(
       {Key? key,
       required this.onPressed,
       required this.child,

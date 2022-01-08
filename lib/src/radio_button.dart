@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class DefaultRadioButton extends StatefulWidget {
+class CandyRadioButton extends StatefulWidget {
   final Function(String?)? onChanged;
   final List<String> radioComponents;
   final double width;
   final double height;
   final double interval;
   final Color textColor;
-  final Color pressedTextColor;
+  final Color selectedTextColor;
   final Color buttonColor;
-  final Color pressedButtonColor;
+  final Color selectedButtonColor;
   final double borderRadius;
   final double elevation;
 
-  const DefaultRadioButton(
+  const CandyRadioButton(
       {Key? key,
       required this.onChanged,
       required this.radioComponents,
@@ -21,18 +21,18 @@ class DefaultRadioButton extends StatefulWidget {
       this.height = 35,
       this.interval = 20,
       this.textColor = const Color(0xFFD8D8D8),
-      this.pressedTextColor = Colors.black,
+      this.selectedTextColor = const Color(0xFFFFFFFF),
       this.buttonColor = const Color(0xFFFFFFFF),
-      this.pressedButtonColor = const Color(0xFFFECFC3),
+      this.selectedButtonColor = const Color(0xFFFC5D5D),
       this.borderRadius = 42,
       this.elevation = 0})
       : super(key: key);
 
   @override
-  _DefaultRadioButtonState createState() => _DefaultRadioButtonState();
+  _CandyRadioButtonState createState() => _CandyRadioButtonState();
 }
 
-class _DefaultRadioButtonState extends State<DefaultRadioButton> {
+class _CandyRadioButtonState extends State<CandyRadioButton> {
   String? currentValue;
 
   @override
@@ -49,7 +49,7 @@ class _DefaultRadioButtonState extends State<DefaultRadioButton> {
               child: Text(widget.radioComponents[i],
                   style: TextStyle(
                       color: (widget.radioComponents[i] == currentValue)
-                          ? widget.pressedTextColor
+                          ? widget.selectedTextColor
                           : widget.textColor,
                       fontWeight: FontWeight.w800)),
               onPressed: () {
@@ -62,7 +62,7 @@ class _DefaultRadioButtonState extends State<DefaultRadioButton> {
                   borderRadius: BorderRadius.circular(widget.borderRadius)),
               elevation: widget.elevation,
               fillColor: (widget.radioComponents[i] == currentValue)
-                  ? widget.pressedButtonColor
+                  ? widget.selectedButtonColor
                   : widget.buttonColor,
               constraints: BoxConstraints.tightFor(
                 width: widget.width,

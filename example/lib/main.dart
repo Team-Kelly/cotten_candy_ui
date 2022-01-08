@@ -46,15 +46,15 @@ class _MyHomePageState extends State<HomePage> {
           child: Column(
             children: [
               const SizedBox(height: 10),
-              const DefaultTextField(
+              const CandyTextField(
                 labelText: '출발',
               ),
               const SizedBox(height: 5),
-              DefaultRadioButton(
+              CandyRadioButton(
                   radioComponents: const ['최단경로', '지하철', '버스'],
                   onChanged: (value) {}),
               const SizedBox(height: 5),
-              TimePicker(
+              CandyTimePicker(
                 height: 63,
                 onChanged: (hour, minute) {},
               ),
@@ -62,9 +62,9 @@ class _MyHomePageState extends State<HomePage> {
                 onChanged: (value) {},
               ),
               const SizedBox(height: 5),
-              const TimeLine(children: [
+              const CandyTimeLine(children: [
                 Indicator(
-                  child: Text('출발', style: TextStyle(color: Color(0xFFFFFFFF))),
+                  child: Text('출발', style: TextStyle(color: Color(0xFFFFFFFF), fontWeight: FontWeight.w800),),
                   title: Text('집'),
                 ),
                 Indicator(
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<HomePage> {
                   subTitle: Text('1호선'),
                 ),
               ], connector: Connector()),
-              DefaultButton(
+              CandyButton(
                   child: const Text('나의 시작길 입력하기',
                       style: TextStyle(
                           color: Color(0xFFFC5D5D),

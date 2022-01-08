@@ -5,8 +5,13 @@ class DayOfTheWeek extends StatefulWidget {
   final double width;
   final double height;
   final Color buttonColor;
+  final Color defaultColor;
+  final Color selectedColor;
   final double borderRadius;
   final double elevation;
+  final double convinientButtonInterval;
+  final double convinientButtonWidth;
+  final double convinientButtonHeight;
   final List<bool> isSelected = [true, true, true, true, true, true, true];
   DayOfTheWeek(
       {Key? key,
@@ -14,8 +19,13 @@ class DayOfTheWeek extends StatefulWidget {
       this.width = 30,
       this.height = 30,
       this.buttonColor = const Color(0xFFFFFFFF),
-      this.borderRadius = 42,
-      this.elevation = 0})
+      this.defaultColor = Colors.grey,
+      this.selectedColor = Colors.blue,
+      this.borderRadius = 30,
+      this.elevation = 0,
+      this.convinientButtonInterval = 40,
+      this.convinientButtonWidth = 60,
+      this.convinientButtonHeight = 30})
       : super(key: key);
 
   @override
@@ -23,9 +33,9 @@ class DayOfTheWeek extends StatefulWidget {
 }
 
 class _DayOfTheWeekState extends State<DayOfTheWeek> {
-  bool weekday = false;
-  bool weekend = false;
-  bool allday = true;
+  // bool weekday = true;
+  // bool weekend = true;
+  // bool allday = true;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +49,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 child: Text('월',
                     style: TextStyle(
                         color:
-                            (widget.isSelected[0]) ? Colors.blue : Colors.grey,
+                            (widget.isSelected[0]) ? widget.selectedColor : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -51,7 +61,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 },
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: (widget.isSelected[0]) ? Colors.blue : Colors.grey,
+                      color: (widget.isSelected[0]) ? widget.selectedColor : widget.defaultColor,
                     ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
@@ -63,7 +73,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 child: Text('화',
                     style: TextStyle(
                         color:
-                            (widget.isSelected[1]) ? Colors.blue : Colors.grey,
+                            (widget.isSelected[1]) ? widget.selectedColor : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -75,7 +85,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 },
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: (widget.isSelected[1]) ? Colors.blue : Colors.grey,
+                      color: (widget.isSelected[1]) ? widget.selectedColor : widget.defaultColor,
                     ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
@@ -87,7 +97,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 child: Text('수',
                     style: TextStyle(
                         color:
-                            (widget.isSelected[2]) ? Colors.blue : Colors.grey,
+                            (widget.isSelected[2]) ? widget.selectedColor : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -99,7 +109,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 },
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: (widget.isSelected[2]) ? Colors.blue : Colors.grey,
+                      color: (widget.isSelected[2]) ? widget.selectedColor : widget.defaultColor,
                     ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
@@ -111,7 +121,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 child: Text('목',
                     style: TextStyle(
                         color:
-                            (widget.isSelected[3]) ? Colors.blue : Colors.grey,
+                            (widget.isSelected[3]) ? widget.selectedColor : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -123,7 +133,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 },
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: (widget.isSelected[3]) ? Colors.blue : Colors.grey,
+                      color: (widget.isSelected[3]) ? widget.selectedColor : widget.defaultColor,
                     ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
@@ -135,7 +145,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 child: Text('금',
                     style: TextStyle(
                         color:
-                            (widget.isSelected[4]) ? Colors.blue : Colors.grey,
+                            (widget.isSelected[4]) ? widget.selectedColor : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -147,7 +157,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 },
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: (widget.isSelected[4]) ? Colors.blue : Colors.grey,
+                      color: (widget.isSelected[4]) ? widget.selectedColor : widget.defaultColor,
                     ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
@@ -159,7 +169,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 child: Text('토',
                     style: TextStyle(
                         color:
-                            (widget.isSelected[5]) ? Colors.blue : Colors.grey,
+                            (widget.isSelected[5]) ? widget.selectedColor : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -171,7 +181,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 },
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: (widget.isSelected[5]) ? Colors.blue : Colors.grey,
+                      color: (widget.isSelected[5]) ? widget.selectedColor : widget.defaultColor,
                     ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
@@ -183,7 +193,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 child: Text('일',
                     style: TextStyle(
                         color:
-                            (widget.isSelected[6]) ? Colors.blue : Colors.grey,
+                            (widget.isSelected[6]) ? widget.selectedColor : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -195,7 +205,7 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 },
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: (widget.isSelected[6]) ? Colors.blue : Colors.grey,
+                      color: (widget.isSelected[6]) ? widget.selectedColor : widget.defaultColor,
                     ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
@@ -214,74 +224,22 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                         color: Colors.grey, fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
-                    widget.isSelected[0] = true;
-                    widget.isSelected[1] = true;
-                    widget.isSelected[2] = true;
-                    widget.isSelected[3] = true;
-                    widget.isSelected[4] = true;
-                    widget.isSelected[5] = false;
-                    widget.isSelected[6] = false;
-                  });
-                  widget.onChanged!(widget.isSelected);
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-                elevation: widget.elevation,
-                fillColor: Colors.white,
-                constraints:
-                    const BoxConstraints.tightFor(width: 50, height: 30),
-              ),
-              const SizedBox(width: 20),
-              RawMaterialButton(
-                child: const Text('주말',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.w800)),
-                onPressed: () {
-                  setState(() {
-                    widget.isSelected[0] = false;
-                    widget.isSelected[1] = false;
-                    widget.isSelected[2] = false;
-                    widget.isSelected[3] = false;
-                    widget.isSelected[4] = false;
-                    widget.isSelected[5] = true;
-                    widget.isSelected[6] = true;
-                  });
-                  widget.onChanged!(widget.isSelected);
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-                elevation: widget.elevation,
-                fillColor: Colors.white,
-                constraints:
-                    const BoxConstraints.tightFor(width: 50, height: 30),
-              ),
-              const SizedBox(width: 20),
-              RawMaterialButton(
-                child: const Text('매일',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        // (allday) ? Colors.blue : Colors.grey,
-                        fontWeight: FontWeight.w800)),
-                onPressed: () {
-                  setState(() {
-                    if (allday) {
+                    if (widget.isSelected[0] == true &&
+                        widget.isSelected[1] == true &&
+                        widget.isSelected[2] == true &&
+                        widget.isSelected[3] == true &&
+                        widget.isSelected[4] == true) {
                       widget.isSelected[0] = false;
                       widget.isSelected[1] = false;
                       widget.isSelected[2] = false;
                       widget.isSelected[3] = false;
                       widget.isSelected[4] = false;
-                      widget.isSelected[5] = false;
-                      widget.isSelected[6] = false;
-                      allday = false;
                     } else {
                       widget.isSelected[0] = true;
                       widget.isSelected[1] = true;
                       widget.isSelected[2] = true;
                       widget.isSelected[3] = true;
                       widget.isSelected[4] = true;
-                      widget.isSelected[5] = true;
-                      widget.isSelected[6] = true;
-                      allday = true;
                     }
                   });
                   widget.onChanged!(widget.isSelected);
@@ -291,7 +249,72 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                 elevation: widget.elevation,
                 fillColor: Colors.white,
                 constraints:
-                    const BoxConstraints.tightFor(width: 50, height: 30),
+                    BoxConstraints.tightFor(width: widget.convinientButtonWidth, height: widget.convinientButtonHeight),
+              ),
+              SizedBox(width: widget.convinientButtonInterval),
+              RawMaterialButton(
+                child: const Text('주말',
+                    style: TextStyle(
+                        color: Colors.grey, fontWeight: FontWeight.w800)),
+                onPressed: () {
+                  setState(() {
+                    if (widget.isSelected[5] == true &&
+                        widget.isSelected[6] == true) {
+                      widget.isSelected[5] = false;
+                      widget.isSelected[6] = false;
+                    } else {
+                      widget.isSelected[5] = true;
+                      widget.isSelected[6] = true;
+                    }
+                  });
+                  widget.onChanged!(widget.isSelected);
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0)),
+                elevation: widget.elevation,
+                fillColor: Colors.white,
+                constraints:
+                    BoxConstraints.tightFor(width: widget.convinientButtonWidth, height: widget.convinientButtonHeight),
+              ),
+              SizedBox(width: widget.convinientButtonInterval),
+              RawMaterialButton(
+                child: const Text('매일',
+                    style: TextStyle(
+                        color: Colors.grey, fontWeight: FontWeight.w800)),
+                onPressed: () {
+                  setState(() {
+                    if (widget.isSelected[0] == true &&
+                        widget.isSelected[1] == true &&
+                        widget.isSelected[2] == true &&
+                        widget.isSelected[3] == true &&
+                        widget.isSelected[4] == true &&
+                        widget.isSelected[5] == true &&
+                        widget.isSelected[6] == true) {
+                      widget.isSelected[0] = false;
+                      widget.isSelected[1] = false;
+                      widget.isSelected[2] = false;
+                      widget.isSelected[3] = false;
+                      widget.isSelected[4] = false;
+                      widget.isSelected[5] = false;
+                      widget.isSelected[6] = false;
+                    } else {
+                      widget.isSelected[0] = true;
+                      widget.isSelected[1] = true;
+                      widget.isSelected[2] = true;
+                      widget.isSelected[3] = true;
+                      widget.isSelected[4] = true;
+                      widget.isSelected[5] = true;
+                      widget.isSelected[6] = true;
+                    }
+                  });
+                  widget.onChanged!(widget.isSelected);
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0)),
+                elevation: widget.elevation,
+                fillColor: Colors.white,
+                constraints:
+                    BoxConstraints.tightFor(width: widget.convinientButtonWidth, height: widget.convinientButtonHeight),
               ),
             ],
           )

@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TimePicker extends StatefulWidget {
+class CandyTimePicker extends StatefulWidget {
   final Function(int?, int?)? onChanged;
   final double width;
   final double height;
   final double textSize;
-  const TimePicker(
+  const CandyTimePicker(
       {Key? key,
       required this.onChanged,
       this.width = 250,
@@ -15,10 +15,10 @@ class TimePicker extends StatefulWidget {
       : super(key: key);
 
   @override
-  _TimePickerState createState() => _TimePickerState();
+  _CandyTimePickerState createState() => _CandyTimePickerState();
 }
 
-class _TimePickerState extends State<TimePicker> {
+class _CandyTimePickerState extends State<CandyTimePicker> {
   int hour = (TimeOfDay.now().hour > 11)
       ? TimeOfDay.now().hour - 12
       : TimeOfDay.now().hour;

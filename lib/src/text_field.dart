@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DefaultTextField extends StatelessWidget {
+class CandyTextField extends StatelessWidget {
   final String? labelText;
   final double width;
   final double height;
@@ -10,14 +10,14 @@ class DefaultTextField extends StatelessWidget {
   final Color enabledsideColor;
   final double borderRadius;
 
-  const DefaultTextField(
+  const CandyTextField(
       {Key? key,
       this.labelText,
       this.width = 320,
       this.height = 60,
       this.labelColor = const Color(0xFFFC5D5D),
       this.filledColor = const Color(0xFFFFFFFF),
-      this.focusedsideColor = const Color(0xFFFFFFFF),
+      this.focusedsideColor = const Color(0xFFFC5D5D),
       this.enabledsideColor = const Color(0xFFFFFFFF),
       this.borderRadius = 15})
       : super(key: key);
