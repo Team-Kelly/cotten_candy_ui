@@ -10,6 +10,10 @@ class CandyRadioButton extends StatefulWidget {
   final Color selectedTextColor;
   final Color buttonColor;
   final Color selectedButtonColor;
+  final Color? focusColor;
+  final Color? hoverColor;
+  final Color? highlightColor;
+  final Color? splashColor;
   final double borderRadius;
   final double elevation;
 
@@ -24,6 +28,10 @@ class CandyRadioButton extends StatefulWidget {
       this.selectedTextColor = const Color(0xFFFFFFFF),
       this.buttonColor = const Color(0xFFFFFFFF),
       this.selectedButtonColor = const Color(0xFFFC5D5D),
+      this.focusColor,
+      this.hoverColor,
+      this.highlightColor,
+      this.splashColor,
       this.borderRadius = 42,
       this.elevation = 0})
       : super(key: key);
@@ -37,7 +45,10 @@ class _CandyRadioButtonState extends State<CandyRadioButton> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: widget.height,width:widget.width*widget.radioComponents.length+widget.interval*(widget.radioComponents.length),
+    return SizedBox(
+      height: widget.height,
+      width: widget.width * widget.radioComponents.length +
+          widget.interval * (widget.radioComponents.length),
       child: Builder(builder: (context) {
         List<Widget> components = [];
         currentValue ??= widget.radioComponents[0];
@@ -64,6 +75,10 @@ class _CandyRadioButtonState extends State<CandyRadioButton> {
               fillColor: (widget.radioComponents[i] == currentValue)
                   ? widget.selectedButtonColor
                   : widget.buttonColor,
+              focusColor: widget.focusColor,
+              hoverColor: widget.hoverColor,
+              highlightColor: widget.highlightColor,
+              splashColor: widget.splashColor,
               constraints: BoxConstraints.tightFor(
                 width: widget.width,
                 height: widget.height,

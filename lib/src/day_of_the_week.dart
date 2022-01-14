@@ -8,6 +8,7 @@ class DayOfTheWeek extends StatefulWidget {
   final Color defaultColor;
   final Color selectedColor;
   final double borderRadius;
+  final double borderWidth;
   final double elevation;
   final double convinientButtonInterval;
   final double convinientButtonWidth;
@@ -22,6 +23,7 @@ class DayOfTheWeek extends StatefulWidget {
       this.defaultColor = Colors.grey,
       this.selectedColor = Colors.blue,
       this.borderRadius = 30,
+      this.borderWidth = 0,
       this.elevation = 0,
       this.convinientButtonInterval = 40,
       this.convinientButtonWidth = 60,
@@ -48,8 +50,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               RawMaterialButton(
                 child: Text('월',
                     style: TextStyle(
-                        color:
-                            (widget.isSelected[0]) ? widget.selectedColor : widget.defaultColor,
+                        color: (widget.isSelected[0])
+                            ? widget.selectedColor
+                            : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -60,9 +63,14 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                   widget.onChanged!(widget.isSelected);
                 },
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: (widget.isSelected[0]) ? widget.selectedColor : widget.defaultColor,
-                    ),
+                    side: (widget.borderWidth == 0)
+                        ? BorderSide(width: 0, color: widget.buttonColor)
+                        : BorderSide(
+                            width: widget.borderWidth,
+                            color: (widget.isSelected[0])
+                                ? widget.selectedColor
+                                : widget.defaultColor,
+                          ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
                 fillColor: widget.buttonColor,
@@ -72,8 +80,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               RawMaterialButton(
                 child: Text('화',
                     style: TextStyle(
-                        color:
-                            (widget.isSelected[1]) ? widget.selectedColor : widget.defaultColor,
+                        color: (widget.isSelected[1])
+                            ? widget.selectedColor
+                            : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -84,9 +93,14 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                   widget.onChanged!(widget.isSelected);
                 },
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: (widget.isSelected[1]) ? widget.selectedColor : widget.defaultColor,
-                    ),
+                    side: (widget.borderWidth == 0)
+                        ? BorderSide(width: 0, color: widget.buttonColor)
+                        : BorderSide(
+                            width: widget.borderWidth,
+                            color: (widget.isSelected[1])
+                                ? widget.selectedColor
+                                : widget.defaultColor,
+                          ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
                 fillColor: widget.buttonColor,
@@ -96,8 +110,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               RawMaterialButton(
                 child: Text('수',
                     style: TextStyle(
-                        color:
-                            (widget.isSelected[2]) ? widget.selectedColor : widget.defaultColor,
+                        color: (widget.isSelected[2])
+                            ? widget.selectedColor
+                            : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -108,9 +123,14 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                   widget.onChanged!(widget.isSelected);
                 },
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: (widget.isSelected[2]) ? widget.selectedColor : widget.defaultColor,
-                    ),
+                    side: (widget.borderWidth == 0)
+                        ? BorderSide(width: 0, color: widget.buttonColor)
+                        : BorderSide(
+                            width: widget.borderWidth,
+                            color: (widget.isSelected[2])
+                                ? widget.selectedColor
+                                : widget.defaultColor,
+                          ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
                 fillColor: widget.buttonColor,
@@ -120,8 +140,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               RawMaterialButton(
                 child: Text('목',
                     style: TextStyle(
-                        color:
-                            (widget.isSelected[3]) ? widget.selectedColor : widget.defaultColor,
+                        color: (widget.isSelected[3])
+                            ? widget.selectedColor
+                            : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -132,9 +153,14 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                   widget.onChanged!(widget.isSelected);
                 },
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: (widget.isSelected[3]) ? widget.selectedColor : widget.defaultColor,
-                    ),
+                    side: (widget.borderWidth == 0)
+                        ? BorderSide(width: 0, color: widget.buttonColor)
+                        : BorderSide(
+                            width: widget.borderWidth,
+                            color: (widget.isSelected[3])
+                                ? widget.selectedColor
+                                : widget.defaultColor,
+                          ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
                 fillColor: widget.buttonColor,
@@ -144,8 +170,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               RawMaterialButton(
                 child: Text('금',
                     style: TextStyle(
-                        color:
-                            (widget.isSelected[4]) ? widget.selectedColor : widget.defaultColor,
+                        color: (widget.isSelected[4])
+                            ? widget.selectedColor
+                            : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -156,9 +183,14 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                   widget.onChanged!(widget.isSelected);
                 },
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: (widget.isSelected[4]) ? widget.selectedColor : widget.defaultColor,
-                    ),
+                    side: (widget.borderWidth == 0)
+                        ? BorderSide(width: 0, color: widget.buttonColor)
+                        : BorderSide(
+                            width: widget.borderWidth,
+                            color: (widget.isSelected[4])
+                                ? widget.selectedColor
+                                : widget.defaultColor,
+                          ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
                 fillColor: widget.buttonColor,
@@ -168,8 +200,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               RawMaterialButton(
                 child: Text('토',
                     style: TextStyle(
-                        color:
-                            (widget.isSelected[5]) ? widget.selectedColor : widget.defaultColor,
+                        color: (widget.isSelected[5])
+                            ? widget.selectedColor
+                            : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -180,9 +213,14 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                   widget.onChanged!(widget.isSelected);
                 },
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: (widget.isSelected[5]) ? widget.selectedColor : widget.defaultColor,
-                    ),
+                    side: (widget.borderWidth == 0)
+                        ? BorderSide(width: 0, color: widget.buttonColor)
+                        : BorderSide(
+                            width: widget.borderWidth,
+                            color: (widget.isSelected[5])
+                                ? widget.selectedColor
+                                : widget.defaultColor,
+                          ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
                 fillColor: widget.buttonColor,
@@ -192,8 +230,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               RawMaterialButton(
                 child: Text('일',
                     style: TextStyle(
-                        color:
-                            (widget.isSelected[6]) ? widget.selectedColor : widget.defaultColor,
+                        color: (widget.isSelected[6])
+                            ? widget.selectedColor
+                            : widget.defaultColor,
                         fontWeight: FontWeight.w800)),
                 onPressed: () {
                   setState(() {
@@ -204,9 +243,14 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                   widget.onChanged!(widget.isSelected);
                 },
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: (widget.isSelected[6]) ? widget.selectedColor : widget.defaultColor,
-                    ),
+                    side: (widget.borderWidth == 0)
+                        ? BorderSide(width: 0, color: widget.buttonColor)
+                        : BorderSide(
+                            width: widget.borderWidth,
+                            color: (widget.isSelected[6])
+                                ? widget.selectedColor
+                                : widget.defaultColor,
+                          ),
                     borderRadius: BorderRadius.circular(widget.borderRadius)),
                 elevation: widget.elevation,
                 fillColor: widget.buttonColor,
@@ -248,8 +292,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                     borderRadius: BorderRadius.circular(5.0)),
                 elevation: widget.elevation,
                 fillColor: Colors.white,
-                constraints:
-                    BoxConstraints.tightFor(width: widget.convinientButtonWidth, height: widget.convinientButtonHeight),
+                constraints: BoxConstraints.tightFor(
+                    width: widget.convinientButtonWidth,
+                    height: widget.convinientButtonHeight),
               ),
               SizedBox(width: widget.convinientButtonInterval),
               RawMaterialButton(
@@ -273,8 +318,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                     borderRadius: BorderRadius.circular(5.0)),
                 elevation: widget.elevation,
                 fillColor: Colors.white,
-                constraints:
-                    BoxConstraints.tightFor(width: widget.convinientButtonWidth, height: widget.convinientButtonHeight),
+                constraints: BoxConstraints.tightFor(
+                    width: widget.convinientButtonWidth,
+                    height: widget.convinientButtonHeight),
               ),
               SizedBox(width: widget.convinientButtonInterval),
               RawMaterialButton(
@@ -313,8 +359,9 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
                     borderRadius: BorderRadius.circular(5.0)),
                 elevation: widget.elevation,
                 fillColor: Colors.white,
-                constraints:
-                    BoxConstraints.tightFor(width: widget.convinientButtonWidth, height: widget.convinientButtonHeight),
+                constraints: BoxConstraints.tightFor(
+                    width: widget.convinientButtonWidth,
+                    height: widget.convinientButtonHeight),
               ),
             ],
           )

@@ -59,12 +59,17 @@ class _MyHomePageState extends State<HomePage> {
                 onChanged: (hour, minute) {},
               ),
               DayOfTheWeek(
+                borderWidth: 1,
                 onChanged: (value) {},
               ),
               const SizedBox(height: 5),
               const CandyTimeLine(children: [
                 Indicator(
-                  child: Text('출발', style: TextStyle(color: Color(0xFFFFFFFF), fontWeight: FontWeight.w800),),
+                  child: Text(
+                    '출발',
+                    style: TextStyle(
+                        color: Color(0xFFFFFFFF), fontWeight: FontWeight.w800),
+                  ),
                   title: Text('집'),
                 ),
                 Indicator(

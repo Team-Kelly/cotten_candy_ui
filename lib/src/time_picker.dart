@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 
 class CandyTimePicker extends StatefulWidget {
   final Function(int?, int?)? onChanged;
+  final Color highlightColor;
   final double width;
   final double height;
   final double textSize;
   const CandyTimePicker(
       {Key? key,
       required this.onChanged,
+      this.highlightColor = const Color(0xFFFC5D5D),
       this.width = 250,
       this.height = 100,
       this.textSize = 20})
@@ -37,7 +39,8 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                 selectionOverlay: SizedBox(
                   width: widget.textSize * 2.5,
                   height: widget.height * 0.3,
-                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
                         height: widget.height * 0.25,
@@ -46,7 +49,7 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                       Container(
                         height: widget.height * 0.02,
                         width: widget.textSize * 2.5,
-                        color: const Color(0xFFFC5D5D),
+                        color: widget.highlightColor,
                       ),
                       SizedBox(
                         height: widget.height * 0.03,
@@ -74,7 +77,11 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                     style: TextStyle(fontSize: widget.textSize),
                   )
                 ])),
-                SizedBox(width: ((widget.width-widget.textSize*12)<0)?0:widget.width-widget.textSize*12,),
+        SizedBox(
+          width: ((widget.width - widget.textSize * 12) < 0)
+              ? 0
+              : widget.width - widget.textSize * 12,
+        ),
         SizedBox(
           height: widget.height,
           width: widget.textSize * 3,
@@ -95,7 +102,8 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                 selectionOverlay: SizedBox(
                   width: widget.textSize * 2,
                   height: widget.height,
-                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
                         height: widget.height * 0.25,
@@ -104,7 +112,7 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                       Container(
                         height: widget.height * 0.02,
                         width: widget.textSize * 2,
-                        color: const Color(0xFFFC5D5D),
+                        color: widget.highlightColor,
                       ),
                       SizedBox(
                         height: widget.height * 0.03,
@@ -159,7 +167,8 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                 selectionOverlay: SizedBox(
                   width: widget.textSize * 2,
                   height: widget.height,
-                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
                         height: widget.height * 0.25,
@@ -168,7 +177,7 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                       Container(
                         height: widget.height * 0.02,
                         width: widget.textSize * 2,
-                        color: const Color(0xFFFC5D5D),
+                        color: widget.highlightColor,
                       ),
                       SizedBox(
                         height: widget.height * 0.03,
