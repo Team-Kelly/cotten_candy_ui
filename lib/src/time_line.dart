@@ -1,3 +1,4 @@
+import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
 class CandyTimeLine extends StatelessWidget {
@@ -77,7 +78,7 @@ class Indicator extends StatelessWidget {
       this.subTitle,
       this.width = 35,
       this.height = 35,
-      this.color = const Color(0xFFFC5D5D),
+      this.color = candyPink,
       this.borderRadius = 35})
       : super(key: key);
 

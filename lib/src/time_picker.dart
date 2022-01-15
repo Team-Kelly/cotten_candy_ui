@@ -1,3 +1,4 @@
+import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class CandyTimePicker extends StatefulWidget {
   const CandyTimePicker(
       {Key? key,
       required this.onChanged,
-      this.highlightColor = const Color(0xFFFC5D5D),
+      this.highlightColor = candyPink,
       this.width = 250,
       this.height = 100,
       this.textSize = 20})

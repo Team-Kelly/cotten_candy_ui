@@ -1,3 +1,4 @@
+import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
 class CandyButton extends StatelessWidget {
@@ -21,7 +22,7 @@ class CandyButton extends StatelessWidget {
       this.onLongPress,
       this.width = 305,
       this.height = 80,
-      this.buttonColor = const Color(0xFFFFFFFF),
+      this.buttonColor = candyPink,
       this.focusColor,
       this.hoverColor,
       this.highlightColor,

@@ -97,7 +97,7 @@ class _MyHomePageState extends State<HomePage> {
               CandyButton(
                   child: const Text('나의 시작길 입력하기',
                       style: TextStyle(
-                          color: Color(0xFFFC5D5D),
+                          color: Color(0xFFFFFFFF),
                           fontWeight: FontWeight.w800)),
                   onPressed: () {}),
               const SizedBox(height: 10),

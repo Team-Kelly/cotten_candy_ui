@@ -1,3 +1,4 @@
+import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
 class CandyTextField extends StatelessWidget {
@@ -15,9 +16,9 @@ class CandyTextField extends StatelessWidget {
       this.labelText,
       this.width = 320,
       this.height = 60,
-      this.labelColor = const Color(0xFFFC5D5D),
+      this.labelColor = candyPink,
       this.filledColor = const Color(0xFFFFFFFF),
-      this.focusedsideColor = const Color(0xFFFC5D5D),
+      this.focusedsideColor = candyPink,
       this.enabledsideColor = const Color(0xFFFFFFFF),
       this.borderRadius = 15})
       : super(key: key);

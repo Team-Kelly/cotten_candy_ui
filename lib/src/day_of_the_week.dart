@@ -1,3 +1,4 @@
+import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
 class DayOfTheWeek extends StatefulWidget {
@@ -20,8 +21,8 @@ class DayOfTheWeek extends StatefulWidget {
       this.width = 30,
       this.height = 30,
       this.buttonColor = const Color(0xFFFFFFFF),
-      this.defaultColor = Colors.grey,
-      this.selectedColor = Colors.blue,
+      this.defaultColor = const Color(0xFF9E9E9E),
+      this.selectedColor = candyPink,
       this.borderRadius = 30,
       this.borderWidth = 0,
       this.elevation = 0,
@@ -259,112 +260,6 @@ class _DayOfTheWeekState extends State<DayOfTheWeek> {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RawMaterialButton(
-                child: const Text('주중',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.w800)),
-                onPressed: () {
-                  setState(() {
-                    if (widget.isSelected[0] == true &&
-                        widget.isSelected[1] == true &&
-                        widget.isSelected[2] == true &&
-                        widget.isSelected[3] == true &&
-                        widget.isSelected[4] == true) {
-                      widget.isSelected[0] = false;
-                      widget.isSelected[1] = false;
-                      widget.isSelected[2] = false;
-                      widget.isSelected[3] = false;
-                      widget.isSelected[4] = false;
-                    } else {
-                      widget.isSelected[0] = true;
-                      widget.isSelected[1] = true;
-                      widget.isSelected[2] = true;
-                      widget.isSelected[3] = true;
-                      widget.isSelected[4] = true;
-                    }
-                  });
-                  widget.onChanged!(widget.isSelected);
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-                elevation: widget.elevation,
-                fillColor: Colors.white,
-                constraints: BoxConstraints.tightFor(
-                    width: widget.convinientButtonWidth,
-                    height: widget.convinientButtonHeight),
-              ),
-              SizedBox(width: widget.convinientButtonInterval),
-              RawMaterialButton(
-                child: const Text('주말',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.w800)),
-                onPressed: () {
-                  setState(() {
-                    if (widget.isSelected[5] == true &&
-                        widget.isSelected[6] == true) {
-                      widget.isSelected[5] = false;
-                      widget.isSelected[6] = false;
-                    } else {
-                      widget.isSelected[5] = true;
-                      widget.isSelected[6] = true;
-                    }
-                  });
-                  widget.onChanged!(widget.isSelected);
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-                elevation: widget.elevation,
-                fillColor: Colors.white,
-                constraints: BoxConstraints.tightFor(
-                    width: widget.convinientButtonWidth,
-                    height: widget.convinientButtonHeight),
-              ),
-              SizedBox(width: widget.convinientButtonInterval),
-              RawMaterialButton(
-                child: const Text('매일',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.w800)),
-                onPressed: () {
-                  setState(() {
-                    if (widget.isSelected[0] == true &&
-                        widget.isSelected[1] == true &&
-                        widget.isSelected[2] == true &&
-                        widget.isSelected[3] == true &&
-                        widget.isSelected[4] == true &&
-                        widget.isSelected[5] == true &&
-                        widget.isSelected[6] == true) {
-                      widget.isSelected[0] = false;
-                      widget.isSelected[1] = false;
-                      widget.isSelected[2] = false;
-                      widget.isSelected[3] = false;
-                      widget.isSelected[4] = false;
-                      widget.isSelected[5] = false;
-                      widget.isSelected[6] = false;
-                    } else {
-                      widget.isSelected[0] = true;
-                      widget.isSelected[1] = true;
-                      widget.isSelected[2] = true;
-                      widget.isSelected[3] = true;
-                      widget.isSelected[4] = true;
-                      widget.isSelected[5] = true;
-                      widget.isSelected[6] = true;
-                    }
-                  });
-                  widget.onChanged!(widget.isSelected);
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-                elevation: widget.elevation,
-                fillColor: Colors.white,
-                constraints: BoxConstraints.tightFor(
-                    width: widget.convinientButtonWidth,
-                    height: widget.convinientButtonHeight),
-              ),
-            ],
-          )
         ],
       ),
     );
