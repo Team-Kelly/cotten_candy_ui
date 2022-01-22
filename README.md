@@ -4,7 +4,7 @@
 
 Make candy-like widget easy!
 
-<img src="C:\src\cotten_candy_ui\exam_image\ui_exam.png" alt="ui_exam" style="zoom:33%;" />
+<img src="/Team-Kelly/cotten_candy_ui/exam_image/ui_exam.png" alt="ui_exam" style="zoom:33%;" />
 
 
 
