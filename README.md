@@ -4,7 +4,7 @@
 
 Make candy-like widget easy!
 
-<img src="https://github.com/Team-Kelly/cotten_candy_ui/blob/main/exam_image/ui_exam.png?raw=true" alt="ui_exam" style="zoom:33%;" />
+<img src="https://github.com/Team-Kelly/cotten_candy_ui/blob/main/exam_image/ui_exam.png?raw=true" alt="ui_exam" style="zoom:20%;" />
 
 
 
