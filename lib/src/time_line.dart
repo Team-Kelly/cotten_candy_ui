@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class CandyTimeLine extends StatelessWidget {
   final List<Indicator> children;
   final Connector connector;
-  const CandyTimeLine({Key? key, required this.children, required this.connector})
+  const CandyTimeLine(
+      {Key? key, required this.children, required this.connector})
       : super(key: key);
 
   @override

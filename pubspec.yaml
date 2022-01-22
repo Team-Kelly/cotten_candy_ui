@@ -1,6 +1,6 @@
 name: cotten_candy_ui
-description: Make candy-like widget easy!
-version: 0.1.0
+description: Make better your flutter application with candy-like widgets!
+version: 0.1.1
 homepage: https://github.com/Team-Kelly/cotten_candy_ui
 
 environment:

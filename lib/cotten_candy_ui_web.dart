@@ -31,7 +31,8 @@ class CottenCandyUiWeb {
       default:
         throw PlatformException(
           code: 'Unimplemented',
-          details: 'cotten_candy_ui for web doesn\'t implement \'${call.method}\'',
+          details:
+              'cotten_candy_ui for web doesn\'t implement \'${call.method}\'',
         );
     }
   }
