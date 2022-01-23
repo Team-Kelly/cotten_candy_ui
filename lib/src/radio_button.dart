@@ -1,6 +1,11 @@
 import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
+///
+/// ## Candy Radio Button
+///  - Default styled buton for Cotten Candy UI.
+///  - Please read [`README.md`](https://pub.dev/packages/cotten_candy_ui) document to get more detailed information about this widget.
+///
 class CandyRadioButton extends StatefulWidget {
   final Function(String?)? onChanged;
   final List<String> radioComponents;
@@ -28,7 +33,7 @@ class CandyRadioButton extends StatefulWidget {
       this.textColor = const Color(0xFFD8D8D8),
       this.selectedTextColor = const Color(0xFFFFFFFF),
       this.buttonColor = const Color(0xFFFFFFFF),
-      this.selectedButtonColor = candyPink,
+      this.selectedButtonColor = CandyColors.candyPink,
       this.focusColor,
       this.hoverColor,
       this.highlightColor,

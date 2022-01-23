@@ -1,0 +1,22 @@
+PODS:
+  - cotten_candy_ui (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - cotten_candy_ui (from `.symlinks/plugins/cotten_candy_ui/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  cotten_candy_ui:
+    :path: ".symlinks/plugins/cotten_candy_ui/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  cotten_candy_ui: 17c6cda5c7084dfb0fe945e98ed97aa4a1b1ce2e
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+
+PODFILE CHECKSUM: af6b891fb448119e2e3d0a226fcad7567aa13204
+
+COCOAPODS: 1.11.2

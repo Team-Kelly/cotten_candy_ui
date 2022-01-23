@@ -2,6 +2,11 @@ import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+///
+/// ## Candy Time Picker
+///  - Default styled buton for Cotten Candy UI.
+///  - Please read [`README.md`](https://pub.dev/packages/cotten_candy_ui) document to get more detailed information about this widget.
+///
 class CandyTimePicker extends StatefulWidget {
   final Function(int?, int?)? onChanged;
   final Color highlightColor;
@@ -11,7 +16,7 @@ class CandyTimePicker extends StatefulWidget {
   const CandyTimePicker(
       {Key? key,
       required this.onChanged,
-      this.highlightColor = candyPink,
+      this.highlightColor = CandyColors.candyPink,
       this.width = 250,
       this.height = 100,
       this.textSize = 20})

@@ -1,57 +1,63 @@
+# 0.1.2
+
+- Refactoring some codes.
+- Change CandyConnector from line to dotted line.
+- Add dartdoc for more convenience.
+
 # 0.1.1
 
-- Slight stability improvements
+- Slight stability improvements.
 
 # 0.1.0
 
-- More customizability for all widgets
+- More customizability for all widgets.
 
 # 0.0.9
 
-- Fix the time line widget
-  - Text and subtext can be added for each indicator
+- Fix the time line widget.
+  - Text and subtext can be added for each indicator.
 
 # 0.0.8
 
-- Add the time line widget
+- Add the time line widget.
   - Indicator
-    - Color and size can be customized
-    - Child widget can be added
+    - Color and size can be customized.
+    - Child widget can be added.
   - connector
     - Color and size can be customized
 
 # 0.0.7
 
-- Add the time picker widget
-  - Color and size can be customized
-  - Returns a value for the hour in 24-hour format
+- Add the time picker widget.
+  - Color and size can be customized.
+  - Returns a value for the hour in 24-hour format.
 
 # 0.0.6
 
-- Fix the day of the week widget
-  - Weekday and weekend selection button deleted
+- Fix the day of the week widget.
+  - Weekday and weekend selection button deleted.
 
 # 0.0.5
 
-- Fix the radio button widget
-  - Add interval settings for buttons
+- Fix the radio button widget.
+  - Add interval settings for buttons.
 
 # 0.0.4
 
-- Add day of the week widget
-  - Color and shape can be customized
+- Add day of the week widget.
+  - Color and shape can be customized.
   - Returns an array representing information on the selected day of the week.
 
 # 0.0.3
 
-- Add radio button widget
-  - Color and shape can be customized
-  - Return the elements of an array
+- Add radio button widget.
+  - Color and shape can be customized.
+  - Return the elements of an array.
 
 # 0.0.2
 
-- Add color customizing
-- Add shape customizing
+- Add color customizing.
+- Add shape customizing.
 
 # 0.0.1
 

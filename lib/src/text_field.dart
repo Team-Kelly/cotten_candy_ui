@@ -1,6 +1,11 @@
 import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
+///
+/// ## Candy Textfield
+///  - Default styled buton for Cotten Candy UI.
+///  - Please read [`README.md`](https://pub.dev/packages/cotten_candy_ui) document to get more detailed information about this widget.
+///
 class CandyTextField extends StatelessWidget {
   final String? labelText;
   final double width;
@@ -16,9 +21,9 @@ class CandyTextField extends StatelessWidget {
       this.labelText,
       this.width = 320,
       this.height = 60,
-      this.labelColor = candyPink,
+      this.labelColor = CandyColors.candyPink,
       this.filledColor = const Color(0xFFFFFFFF),
-      this.focusedsideColor = candyPink,
+      this.focusedsideColor = CandyColors.candyPink,
       this.enabledsideColor = const Color(0xFFFFFFFF),
       this.borderRadius = 15})
       : super(key: key);
@@ -45,4 +50,3 @@ class CandyTextField extends StatelessWidget {
         )));
   }
 }
-// expanded랑 주소입력 기능 추가하기(around 참고)

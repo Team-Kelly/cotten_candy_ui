@@ -1,6 +1,11 @@
 import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
+///
+/// ## Candy Button
+///  - Default styled buton for Cotten Candy UI.
+///  - Please read [`README.md`](https://pub.dev/packages/cotten_candy_ui) document to get more detailed information about this widget.
+///
 class CandyButton extends StatelessWidget {
   final Function()? onPressed;
   final Function()? onLongPress;
@@ -22,7 +27,7 @@ class CandyButton extends StatelessWidget {
       this.onLongPress,
       this.width = 305,
       this.height = 80,
-      this.buttonColor = candyPink,
+      this.buttonColor = CandyColors.candyPink,
       this.focusColor,
       this.hoverColor,
       this.highlightColor,

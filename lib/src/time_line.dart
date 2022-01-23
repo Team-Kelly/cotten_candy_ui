@@ -1,9 +1,14 @@
 import 'package:cotten_candy_ui/src/color_source.dart';
 import 'package:flutter/material.dart';
 
+///
+/// ## Candy Timeline
+///  - Default styled buton for Cotten Candy UI.
+///  - Please read [`README.md`](https://pub.dev/packages/cotten_candy_ui) document to get more detailed information about this widget.
+///
 class CandyTimeLine extends StatelessWidget {
-  final List<Indicator> children;
-  final Connector connector;
+  final List<CandyIndicator> children;
+  final CandyConnector connector;
   const CandyTimeLine(
       {Key? key, required this.children, required this.connector})
       : super(key: key);
@@ -63,7 +68,12 @@ class CandyTimeLine extends StatelessWidget {
   }
 }
 
-class Indicator extends StatelessWidget {
+///
+/// ## Candy Indicator
+///  - Default styled buton for Cotten Candy UI.
+///  - Please read [`README.md`](https://pub.dev/packages/cotten_candy_ui) document to get more detailed information about this widget.
+///
+class CandyIndicator extends StatelessWidget {
   final Widget? child;
   final Widget? title;
   final Widget? subTitle;
@@ -72,14 +82,14 @@ class Indicator extends StatelessWidget {
   final Color color;
   final double borderRadius;
 
-  const Indicator(
+  const CandyIndicator(
       {Key? key,
       this.child,
       this.title,
       this.subTitle,
       this.width = 35,
       this.height = 35,
-      this.color = candyPink,
+      this.color = CandyColors.candyPink,
       this.borderRadius = 35})
       : super(key: key);
 
@@ -95,11 +105,11 @@ class Indicator extends StatelessWidget {
   }
 }
 
-class Connector extends StatelessWidget {
+class CandyConnector extends StatelessWidget {
   final double width;
   final double height;
   final Color color;
-  const Connector({
+  const CandyConnector({
     Key? key,
     this.width = 5,
     this.height = 60,
@@ -108,10 +118,47 @@ class Connector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      color: color,
-    );
+    return Builder(builder: (_) {
+      List<Widget> results = [];
+
+      results.add(
+        SizedBox(
+          height: width / 2,
+        ),
+      );
+
+      for (int i = 0; i < (height ~/ width ~/ 2); i++) {
+        if (i != 0) {
+          results.add(
+            SizedBox(
+              width: width,
+              height: width,
+            ),
+          );
+        }
+
+        results.add(
+          Container(
+            width: width,
+            height: width,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(width),
+            ),
+          ),
+        );
+      }
+
+      results.add(
+        SizedBox(
+          width: width,
+          height: width / 2,
+        ),
+      );
+
+      return Column(
+        children: [...results],
+      );
+    });
   }
 }
