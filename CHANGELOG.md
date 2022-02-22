@@ -1,6 +1,14 @@
+# 0.1.10
+
+- Modify documents.
+
+# 0.1.9
+
+- Align the timeline to the left.
+
 # 0.1.8
 
-- Modify time picker ui.
+- Modify timepicker ui.
 
 # 0.1.7
 
@@ -8,8 +16,8 @@
 
 # 0.1.6
 
-- Modify time line ui.
-- Modify time picker ui.
+- Modify timeline ui.
+- Modify timepicker ui.
 
 # 0.1.5
 
