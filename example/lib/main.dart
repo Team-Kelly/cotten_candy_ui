@@ -16,9 +16,34 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  final String title = "Cotton Candy UI Example";
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final String title = "Cotton Candy UI Example";
+  late FixedExtentScrollController hourScrollController;
+  late FixedExtentScrollController minuteScrollController;
+  late FixedExtentScrollController ampmScrollController;
+
+  @override
+  ///
+  ///Initialization process to manipulate timepicker externally
+  ///
+  void initState() {
+    hourScrollController = FixedExtentScrollController(
+        initialItem: (TimeOfDay.now().hour > 11)
+            ? TimeOfDay.now().hour - 12
+            : TimeOfDay.now().hour);
+    minuteScrollController =
+        FixedExtentScrollController(initialItem: TimeOfDay.now().minute);
+    ampmScrollController = FixedExtentScrollController(
+        initialItem: (TimeOfDay.now().hour > 11) ? 1 : 0);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +85,9 @@ class HomePage extends StatelessWidget {
               ///usage of CandyTimePicker
               ///
               CandyTimePicker(
+                hourScrollController: hourScrollController,
+                minuteScrollController: minuteScrollController,
+                ampmScrollController: ampmScrollController,
                 height: 63,
                 onChanged: (hour, minute) {},
               ),
@@ -136,7 +164,20 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  ///
+                  ///manipulate the timpicker externally
+                  ///
+                  ampmScrollController.animateToItem(1,
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.ease);
+                  hourScrollController.animateToItem(2,
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.ease);
+                  minuteScrollController.animateToItem(60,
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.ease);
+                },
               ),
               const SizedBox(height: 10),
             ],

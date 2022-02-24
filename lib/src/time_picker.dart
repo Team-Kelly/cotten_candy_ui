@@ -13,16 +13,22 @@ class CandyTimePicker extends StatefulWidget {
   final double width;
   final double height;
   final double textSize;
+  final FixedExtentScrollController? ampmScrollController;
+  final FixedExtentScrollController? hourScrollController;
+  final FixedExtentScrollController? minuteScrollController;
 
   /// Creates a TimePicker widget
-  const CandyTimePicker(
-      {Key? key,
-      required this.onChanged,
-      this.highlightColor = CandyColors.candyPink,
-      this.width = 250,
-      this.height = 100,
-      this.textSize = 20})
-      : super(key: key);
+  const CandyTimePicker({
+    Key? key,
+    required this.onChanged,
+    this.highlightColor = CandyColors.candyPink,
+    this.width = 250,
+    this.height = 100,
+    this.textSize = 20,
+    this.ampmScrollController,
+    this.hourScrollController,
+    this.minuteScrollController,
+  }) : super(key: key);
 
   @override
   _CandyTimePickerState createState() => _CandyTimePickerState();
@@ -34,6 +40,7 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
       : TimeOfDay.now().hour;
   int minute = TimeOfDay.now().minute;
   int ampm = (TimeOfDay.now().hour > 11) ? 1 : 0;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -69,7 +76,8 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                 ),
               ),
               itemExtent: 30,
-              scrollController: FixedExtentScrollController(initialItem: ampm),
+              scrollController: widget.ampmScrollController ??
+                  FixedExtentScrollController(initialItem: ampm),
               onSelectedItemChanged: (onSelectedItemChanged) {
                 setState(() {
                   ampm = onSelectedItemChanged;
@@ -136,7 +144,7 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                     ),
                     looping: true,
                     itemExtent: 30,
-                    scrollController:
+                    scrollController: widget.hourScrollController ??
                         FixedExtentScrollController(initialItem: hour),
                     onSelectedItemChanged: (onSelectedItemChanged) {
                       setState(() {
@@ -206,7 +214,7 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
                     ),
                     looping: true,
                     itemExtent: 30,
-                    scrollController:
+                    scrollController: widget.minuteScrollController ??
                         FixedExtentScrollController(initialItem: minute),
                     onSelectedItemChanged: (onSelectedItemChanged) {
                       setState(() {

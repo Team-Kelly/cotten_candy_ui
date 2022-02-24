@@ -1,3 +1,7 @@
+# 0.1.11
+
+- Add scrollController to CandyTimePicker.
+
 # 0.1.10
 
 - Modify documents.
