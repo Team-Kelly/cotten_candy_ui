@@ -1,3 +1,7 @@
+# 0.1.13
+
+- Add prefix components to CandyTextField.
+
 # 0.1.12
 
 - Fix CandyTextField height setting error.

@@ -67,9 +67,21 @@ class _HomePageState extends State<HomePage> {
               ///usage of CandyTextField
               ///
               CandyTextField(
-                hintText: '출발',
+                // prefixText: '출발',
+                // prefixStyle: TextStyle(
+                //     color: CandyColors.candyPink, fontWeight: FontWeight.bold),
+                prefixIcon: const Text(
+                  '출발',
+                  style: TextStyle(
+                      color: CandyColors.candyPink,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+                hintText: '내용을 입력해주세요!',
                 hintStyle: const TextStyle(
-                    color: CandyColors.candyPink, fontWeight: FontWeight.bold),
+                    color: Colors.grey,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold),
                 onChanged: (value) {},
               ),
 

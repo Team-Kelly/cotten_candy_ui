@@ -12,6 +12,9 @@ class CandyTextField extends StatefulWidget {
   final double width;
   final double height;
   final double? elevation;
+  final String? prefixText;
+  final TextStyle? prefixStyle;
+  final Widget? prefixIcon;
   final Widget? label;
   final String? hintText;
   final TextStyle? hintStyle;
@@ -27,6 +30,9 @@ class CandyTextField extends StatefulWidget {
       this.width = 320,
       this.height = 60,
       this.elevation = 1,
+      this.prefixText,
+      this.prefixStyle,
+      this.prefixIcon,
       this.label,
       this.hintText,
       this.hintStyle,
@@ -61,6 +67,14 @@ class _CandyTextFieldState extends State<CandyTextField> {
         decoration: InputDecoration(
           filled: true,
           fillColor: widget.filledColor,
+          prefixText: widget.prefixText,
+          prefixStyle: widget.prefixStyle,
+          prefixIcon: SizedBox(
+              width: widget.height,
+              height: widget.height,
+              child: Center(
+                child: widget.prefixIcon,
+              )),
           label: widget.label,
           hintText: widget.hintText,
           hintStyle: widget.hintStyle,
