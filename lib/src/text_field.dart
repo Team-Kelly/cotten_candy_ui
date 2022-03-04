@@ -9,10 +9,12 @@ import 'package:flutter/material.dart';
 
 class CandyTextField extends StatefulWidget {
   final Function(String?)? onChanged;
-  final String? labelText;
   final double width;
   final double height;
-  final Color labelColor;
+  final double? elevation;
+  final Widget? label;
+  final String? hintText;
+  final TextStyle? hintStyle;
   final Color filledColor;
   final Color focusedsideColor;
   final Color enabledsideColor;
@@ -22,10 +24,12 @@ class CandyTextField extends StatefulWidget {
   const CandyTextField(
       {Key? key,
       required this.onChanged,
-      this.labelText,
       this.width = 320,
       this.height = 60,
-      this.labelColor = CandyColors.candyPink,
+      this.elevation = 1,
+      this.label,
+      this.hintText,
+      this.hintStyle,
       this.filledColor = const Color(0xFFFFFFFF),
       this.focusedsideColor = CandyColors.candyPink,
       this.enabledsideColor = const Color(0xFFFFFFFF),
@@ -40,10 +44,14 @@ class _CandyTextFieldState extends State<CandyTextField> {
   String? currentValue;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: widget.width,
-      height: widget.height,
+    return Card(
+      elevation: widget.elevation,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(widget.borderRadius),
+      ),
       child: TextField(
+        maxLines: null,
+        expands: true,
         onChanged: (value) {
           setState(() {
             currentValue = value;
@@ -53,9 +61,11 @@ class _CandyTextFieldState extends State<CandyTextField> {
         decoration: InputDecoration(
           filled: true,
           fillColor: widget.filledColor,
-          labelText:
-              (widget.labelText != null) ? (' ' + widget.labelText!) : null,
-          labelStyle: TextStyle(color: widget.labelColor),
+          label: widget.label,
+          hintText: widget.hintText,
+          hintStyle: widget.hintStyle,
+          constraints: BoxConstraints.tightFor(
+              width: widget.width, height: widget.height),
           focusedBorder: OutlineInputBorder(
             borderRadius:
                 BorderRadius.all(Radius.circular(widget.borderRadius)),

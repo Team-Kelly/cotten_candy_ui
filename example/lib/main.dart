@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   late FixedExtentScrollController ampmScrollController;
 
   @override
+
   ///
   ///Initialization process to manipulate timepicker externally
   ///
@@ -66,7 +67,9 @@ class _HomePageState extends State<HomePage> {
               ///usage of CandyTextField
               ///
               CandyTextField(
-                labelText: '출발',
+                hintText: '출발',
+                hintStyle: const TextStyle(
+                    color: CandyColors.candyPink, fontWeight: FontWeight.bold),
                 onChanged: (value) {},
               ),
 

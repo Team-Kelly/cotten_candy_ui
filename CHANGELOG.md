@@ -1,3 +1,9 @@
+# 0.1.12
+
+- Fix CandyTextField height setting error.
+- Add hintText and hintStyle to CandyTextField.
+- Add elevation to CandyTextField.
+
 # 0.1.11
 
 - Add scrollController to CandyTimePicker.

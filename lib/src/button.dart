@@ -13,7 +13,7 @@ class CandyButton extends StatelessWidget {
   final double width;
   final double height;
   final Color buttonColor;
-  final Color enabledColor;
+  final Color disabledColor;
   final Color? focusColor;
   final Color? hoverColor;
   final Color? highlightColor;
@@ -30,7 +30,7 @@ class CandyButton extends StatelessWidget {
       this.width = 305,
       this.height = 80,
       this.buttonColor = CandyColors.candyPink,
-      this.enabledColor = const Color(0xFFFECFC3),
+      this.disabledColor = const Color(0xFFFECFC3),
       this.focusColor,
       this.hoverColor,
       this.highlightColor,
@@ -49,7 +49,7 @@ class CandyButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius)),
       elevation: elevation,
-      fillColor: (onPressed != null) ? buttonColor : enabledColor,
+      fillColor: (onPressed != null) ? buttonColor : disabledColor,
       focusColor: focusColor,
       hoverColor: hoverColor,
       highlightColor: highlightColor,
