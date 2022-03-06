@@ -1,4 +1,4 @@
-library cotten_candy_ui;
+library cotton_candy_ui;
 
 export 'src/button.dart';
 export 'src/radio_button.dart';

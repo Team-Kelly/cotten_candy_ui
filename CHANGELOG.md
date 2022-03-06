@@ -1,3 +1,7 @@
+# 0.1.14
+
+- Change pubspec.yaml setting from plugin to package.
+
 # 0.1.13
 
 - Add prefix components to CandyTextField.

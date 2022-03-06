@@ -1,6 +1,6 @@
 name: cotton_candy_ui
 description: Make better your flutter application with candy-like widgets!
-version: 0.1.13
+version: 0.1.14
 homepage: https://github.com/Team-Kelly/cotten_candy_ui
 
 environment:
@@ -23,21 +23,21 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
-flutter:
-  # This section identifies this Flutter project as a plugin project.
-  # The 'pluginClass' and Android 'package' identifiers should not ordinarily
-  # be modified. They are used by the tooling to maintain consistency when
-  # adding or updating assets for this project.
-  plugin:
-    platforms:
-      android:
-        package: kr.co.shiban.cotton_candy_ui
-        pluginClass: CottonCandyUiPlugin
-      ios:
-        pluginClass: CottonCandyUiPlugin
-      web:
-        pluginClass: CottonCandyUiWeb
-        fileName: cotton_candy_ui_web.dart
+# flutter:
+#   # This section identifies this Flutter project as a plugin project.
+#   # The 'pluginClass' and Android 'package' identifiers should not ordinarily
+#   # be modified. They are used by the tooling to maintain consistency when
+#   # adding or updating assets for this project.
+#   plugin:
+#     platforms:
+#       android:
+#         package: kr.co.shiban.cotton_candy_ui
+#         pluginClass: CottonCandyUiPlugin
+#       ios:
+#         pluginClass: CottonCandyUiPlugin
+#       web:
+#         pluginClass: CottonCandyUiWeb
+#         fileName: cotton_candy_ui_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
