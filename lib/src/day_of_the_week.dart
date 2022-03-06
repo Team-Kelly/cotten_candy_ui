@@ -16,27 +16,27 @@ class CandyDayOfTheWeek extends StatefulWidget {
   final double borderRadius;
   final double borderWidth;
   final double elevation;
-  final double convinientButtonInterval;
-  final double convinientButtonWidth;
-  final double convinientButtonHeight;
+  // final double convinientButtonInterval;
+  // final double convinientButtonWidth;
+  // final double convinientButtonHeight;
   final List<bool> isSelected = [true, true, true, true, true, true, true];
 
   /// Creates a DayOfTheWeek widget
-  CandyDayOfTheWeek(
-      {Key? key,
-      required this.onChanged,
-      this.width = 30,
-      this.height = 30,
-      this.buttonColor = const Color(0xFFFFFFFF),
-      this.defaultColor = const Color(0xFF9E9E9E),
-      this.selectedColor = CandyColors.candyPink,
-      this.borderRadius = 30,
-      this.borderWidth = 0,
-      this.elevation = 0,
-      this.convinientButtonInterval = 40,
-      this.convinientButtonWidth = 60,
-      this.convinientButtonHeight = 30})
-      : super(key: key);
+  CandyDayOfTheWeek({
+    Key? key,
+    required this.onChanged,
+    this.width = 30,
+    this.height = 30,
+    this.buttonColor = const Color(0xFFFFFFFF),
+    this.defaultColor = const Color(0xFF9E9E9E),
+    this.selectedColor = CandyColors.candyPink,
+    this.borderRadius = 30,
+    this.borderWidth = 0,
+    this.elevation = 0,
+    // this.convinientButtonInterval = 40,
+    // this.convinientButtonWidth = 60,
+    // this.convinientButtonHeight = 30
+  }) : super(key: key);
 
   @override
   _CandyDayOfTheWeekState createState() => _CandyDayOfTheWeekState();
@@ -117,7 +117,7 @@ class _CandyDayOfTheWeekState extends State<CandyDayOfTheWeek> {
                 ? BorderSide(width: 0, color: buttonColor)
                 : BorderSide(
                     width: borderWidth,
-                    color: isSelected ? selectedColor : defaultColor,
+                    color: isSelected ? selectedColor : buttonColor,
                   ),
             borderRadius: BorderRadius.circular(borderRadius)),
         elevation: elevation,
