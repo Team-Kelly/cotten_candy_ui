@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 ///  - Please read [`README.md`](https://pub.dev/packages/cotton_candy_ui) document to get more detailed information about this widget.
 ///
 class CandyTimePicker extends StatefulWidget {
-  final Function(int?, int?)? onChanged;
+  final Function(int, int)? onChanged;
   final Color highlightColor;
   final double width;
   final double height;

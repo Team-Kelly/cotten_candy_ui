@@ -17,7 +17,7 @@
 
     ```yaml
     dependencies:
-      cotton_candy_ui: ^0.1.15
+      cotton_candy_ui: ^0.1.16
     ```
 
  - Alternatively, your editor might support `flutter pub get`. Check the docs for your editor to learn more.
