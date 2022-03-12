@@ -16,13 +16,9 @@ class CandyDayOfTheWeek extends StatefulWidget {
   final double borderRadius;
   final double borderWidth;
   final double elevation;
-  // final double convinientButtonInterval;
-  // final double convinientButtonWidth;
-  // final double convinientButtonHeight;
-  final List<bool> isSelected = [true, true, true, true, true, true, true];
 
   /// Creates a DayOfTheWeek widget
-  CandyDayOfTheWeek({
+  const CandyDayOfTheWeek({
     Key? key,
     required this.onChanged,
     this.width = 30,
@@ -33,9 +29,6 @@ class CandyDayOfTheWeek extends StatefulWidget {
     this.borderRadius = 30,
     this.borderWidth = 0,
     this.elevation = 0,
-    // this.convinientButtonInterval = 40,
-    // this.convinientButtonWidth = 60,
-    // this.convinientButtonHeight = 30
   }) : super(key: key);
 
   @override
@@ -43,13 +36,13 @@ class CandyDayOfTheWeek extends StatefulWidget {
 }
 
 class _CandyDayOfTheWeekState extends State<CandyDayOfTheWeek> {
+  List<bool> isSelected = [true, true, true, true, true, true, true];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Builder(
         builder: (_) {
           List<Widget> results = [];
-
           for (int i = 0; i < 7; i++) {
             results.add(
               candyCheckBox(
@@ -57,7 +50,7 @@ class _CandyDayOfTheWeekState extends State<CandyDayOfTheWeek> {
                   final list = ["일", "월", "화", "수", "목", "금", "토"];
                   return list[i];
                 })(),
-                isSelected: widget.isSelected[i],
+                isSelected: isSelected[i],
                 elevation: widget.elevation,
                 borderRadius: widget.borderRadius,
                 borderWidth: widget.borderWidth,
@@ -68,11 +61,9 @@ class _CandyDayOfTheWeekState extends State<CandyDayOfTheWeek> {
                 defaultColor: widget.defaultColor,
                 onPressed: () {
                   setState(() {
-                    (widget.isSelected[i])
-                        ? widget.isSelected[i] = false
-                        : widget.isSelected[i] = true;
+                    isSelected[i] = !isSelected[i];
                   });
-                  widget.onChanged!(widget.isSelected);
+                  widget.onChanged!(isSelected);
                 },
               ),
             );

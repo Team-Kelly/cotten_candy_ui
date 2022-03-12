@@ -1,3 +1,7 @@
+# 0.1.17
+
+- fix CandyDayOfTheWeek stable.
+
 # 0.1.16
 
 - fix CandyTimePicker to return null safty.
