@@ -35,9 +35,7 @@ class CandyTimePicker extends StatefulWidget {
 }
 
 class _CandyTimePickerState extends State<CandyTimePicker> {
-  int hour = (TimeOfDay.now().hour > 11)
-      ? TimeOfDay.now().hour - 12
-      : TimeOfDay.now().hour;
+  int hour = TimeOfDay.now().hour;
   int minute = TimeOfDay.now().minute;
   int ampm = (TimeOfDay.now().hour > 11) ? 1 : 0;
 

@@ -1,3 +1,8 @@
+# 0.2.0
+
+- Successfully applied to the "Shiban"project
+- fix CandyTimePicker initial value errors.
+
 # 0.1.18
 
 - fix CandyTimePicker errors that occur when manipulating the ampm.

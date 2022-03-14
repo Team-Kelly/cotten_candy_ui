@@ -104,7 +104,9 @@ class _HomePageState extends State<HomePage> {
                 minuteScrollController: minuteScrollController,
                 ampmScrollController: ampmScrollController,
                 height: 63,
-                onChanged: (hour, minute) {},
+                onChanged: (hour, minute) {
+                  // print(hour.toString()+' : '+minute.toString());
+                },
               ),
 
               ///
@@ -184,13 +186,13 @@ class _HomePageState extends State<HomePage> {
                   ///manipulate the timpicker externally
                   ///
                   ampmScrollController.animateToItem(1,
-                      duration: Duration(milliseconds: 400),
+                      duration: const Duration(milliseconds: 400),
                       curve: Curves.ease);
                   hourScrollController.animateToItem(2,
-                      duration: Duration(milliseconds: 400),
+                      duration: const Duration(milliseconds: 400),
                       curve: Curves.ease);
                   minuteScrollController.animateToItem(60,
-                      duration: Duration(milliseconds: 400),
+                      duration: const Duration(milliseconds: 400),
                       curve: Curves.ease);
                 },
               ),
