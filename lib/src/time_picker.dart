@@ -81,6 +81,11 @@ class _CandyTimePickerState extends State<CandyTimePicker> {
               onSelectedItemChanged: (onSelectedItemChanged) {
                 setState(() {
                   ampm = onSelectedItemChanged;
+                  if (ampm == 1) {
+                    hour += 12;
+                  } else if (ampm == 0) {
+                    hour -= 12;
+                  }
                 });
                 widget.onChanged!(hour, minute);
               },

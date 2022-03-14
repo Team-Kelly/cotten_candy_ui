@@ -1,3 +1,7 @@
+# 0.1.18
+
+- fix CandyTimePicker errors that occur when manipulating the ampm.
+
 # 0.1.17
 
 - fix CandyDayOfTheWeek stable.
